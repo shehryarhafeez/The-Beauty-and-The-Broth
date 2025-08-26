@@ -1,1 +1,3260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty & The Broth Testimonials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+    <style>
+        /* Base styles */
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: RGB(247,244,235);
+     font-family: 'Alexandria-Light';
+
+}
+
+html, body {
+    width: 100%;
+  
+    overflow-x: hidden;
+}
+
+@font-face {
+           font-family: 'Alexandria-Light';
+           src: url("../Desktop/Alexandria-Light.woff") format("woff");
+           font-weight: 700;
+           font-weight: 700;
+           font-style: normal;
+        }
+
+    @font-face {
+           font-family: 'Adieu-Bold';
+           src: url("../Desktop/Adieu-Bold.woff2") format("woff2");
+           font-weight: 700;
+           font-weight: 700;
+           font-style: normal;
+        }
+         h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-family: 'Adieu-Bold';
+            font-weight: 500;
+            font-style: normal;
+        }
+       
+    /* Trust Bar */
+        .trust-bar {
+            background-color: RGB(171,0,45);
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.4;
+            margin: 0 0 1rem;
+            color: RGB(246,227,202);
+
+            margin-bottom: 0;
+            white-space: nowrap;
+            max-width: none;
+        }
+
+      /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: RGB(247,244,235);
+            padding: 15px 5%;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Logo */
+        .logo {
+            flex: 0 0 200px;
+        }
+        
+        .logo img {
+            padding-top: 10px;
+            height: 45px;
+            width: auto;
+        }
+        
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: RGB(203,126,0);
+            font-size: 18px;
+            font-weight: 500;
+            align-self: stretch;
+            letter-spacing: 0.5px;
+            padding: 10px 0;
+            position: relative;
+            z-index: 3;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #c23a3a;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c23a3a;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Dropdown */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+           color: white;
+            min-width: 200px;
+            padding: 15px 0;
+            opacity: 0;
+            background-color: RGB(247,244,235);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 5px 20px;
+            color: RGB(203,126,0);
+            text-decoration: none;
+            font-size: 10px;
+            transition: all 0.2s;
+        }
+        
+    
+        
+        /* Icons */
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .icon-link {
+            color: #0A0A08;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .icon-link:hover {
+            color: #c23a3a;
+        }
+        
+        .icon-link svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #c23a3a;
+            color: white;
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Login Link */
+.login-link {
+            text-decoration: none;
+            color: RGB(203,126,0);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+.login-link:hover {
+            color: #c23a3a;
+        }
+.LT-WH-wave-container {
+  position: absolute;
+  bottom: -100px; /* Reduced from -230px to show more of the wave */
+  left: 0;
+  width: 100vw;
+  height: auto;
+  line-height: 0;
+  overflow: visible; /* Change from hidden */
+  z-index: 4; /* Ensure it's above hero but below product cards */
+}
+
+.LT-WH-wave-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+        /* Cart Details */
+        .cart-details {
+            position: absolute;
+            top: 11px;
+            right: -8px;
+            background-color:RGB(203,126,0);
+            color: white;
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Mobile menu button (hidden on desktop) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #0A0A08;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                gap: 15px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .dropdown {
+                position: static;
+                box-shadow: none;
+                margin-left: 20px;
+                margin-top: 10px;
+                display: none;
+                 background-color: RGB(247,244,235);
+            }
+            
+            .nav-item:hover .dropdown {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+        } 
+    
+ .hero {
+  height: 90vh;
+  min-height: 600px;
+  background: url("B&B/hero.jpeg") no-repeat center center/cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 8%;
+  color: #ab002d;
+  position: relative; /* Add this */
+  overflow: visible; /* Change from default hidden */
+  margin-bottom: 100px; /* Add space for the wave */
+}
+
+.hero-content {
+  position: relative;
+  color: rgb(247, 0, 0);
+  text-align: center;
+  z-index: 2;
+}
+ 
+   
+    /* Text container styling */
+.LT-WH-text-container-body {
+        text-align: left !important;
+        transform: none;
+        padding-bottom: 150px;
+       padding-right: 0; /* Remove excessive right padding */
+    min-width: auto; /* Remove fixed min-width */
+    max-width: 100%;
+       
+        padding-left: 100px;
+        align-items: center;
+
+        font-family: "Alexandria-Light";
+    
+}
+
+
+/* Heading */
+.luna-templates__heading {
+  margin: 15px 0 25px;
+  font-size: 50px;
+  line-height: 1.0;
+  color: #ab002d;
+  font-family: "Adieu-Bold";
+         /* Bold */
+  word-break: break-word;
+  box-sizing: border-box;
+  display: inline-block;    /* needed for transform */
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  unicode-bidi: isolate;
+  /* Bold + Stretch effect */
+  transform: scaleX(1.0);   /* stretch horizontally by 20% */
+  letter-spacing: 2px;      /* optional: keeps spacing readable */
+}
+
+
+.luna-templates__heading span {
+  font-style: normal; /* extra control if you ever need to override */
+}
+
+
+.luna-templates__text p {
+    max-width: 100%;
+    font-family: "Alexandria Light", sans-serif;
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+    line-height: 1.4;
+    margin: 0 0 1rem;
+    font-size: calc(1.125rem * var(--font-body-scale));
+   
+    transform: scaleX(1.0);   /* stretch horizontally by 20% */
+  letter-spacing: 0.3px;      /* optional: keeps spacing readable */
+}
+
+
+
+  .LT-WH-wave-container textPath tspan {
+  fill: #ffffff;   /* change color */
+  font-size: 18px; /* adjust size */
+  font-weight: 600;
+}
+.luna-templates__button-container {
+  margin: 20px 0 0;
+}
+
+
+.luna-templates__button {
+  padding: 0.6rem 2rem;
+  margin: 20px 0;
+  background-color: #ab002d;
+  border: 1px solid #ab002d;
+  color: #ffffff !important;
+  font-size: 16px;
+  text-decoration: none;
+   padding: 12px 30px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+}
+.luna-templates__button:hover {
+  background-color: transparent;
+  border: 1px solid #ab002d;
+  color: #ab002d !important;
+}
+
+
+
+.luna-templates__button2 {
+  padding: 0.5rem 2rem;
+  margin: 20px 0;
+  background-color: #ab002d;
+  border: 1px solid #ab002d;
+  color: #ffffff !important;
+  font-size: 16px;
+  text-decoration: none;
+   padding: 12px 30px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  margin-left: 60px;
+}
+
+.luna-templates__button2:hover {
+  background-color: transparent;
+  border: 1px solid #ab002d;
+  color: #ab002d !important;
+}
+
+
+
+.luna-templates__button3 {
+  padding: 0.6rem 2rem;
+  margin: 120px 0;
+  background-color: #ab002d;
+  border: 1px solid #ab002d;
+  color: #ffffff !important;
+  font-size: 26px;
+  text-decoration: none;
+   padding: 12px 30px;
+
+
+}
+.luna-templates__button3:hover {
+  background-color: transparent;
+  border: 1px solid #ab002d;
+  color: #ab002d !important;
+}
+
+    .hero-sections {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            
+            overflow: hidden;
+            min-height: 500px;
+            min-width: 30px;
+            position: relative;
+        }
+        
+        .text-contents {
+            flex: 1;
+            padding: 60px 40px;
+            min-width: 300px;
+            z-index: 2;
+        }
+        
+        .subheading {
+            font-size: 10px;
+            color:  #ab002d;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 500;
+              margin-left: 60px;
+        }
+        
+        .headings {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            margin-left: 60px;
+            color:  #ab002d;
+            line-height: 1.2;
+            padding-bottom: 10px;
+        }
+        
+        
+        .image-contents {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .image-contents img {
+            max-width: 90%;
+            max-height: 450px;
+            object-fit: contain;
+            z-index: 2;
+            position: relative;
+        }
+        
+        /* Decorative elements */
+    
+        .hero-sections::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+         
+            top: -150px;
+            right: -100px;
+            z-index: 1;
+        }
+        
+        .hero-sections::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+           
+            bottom: -100px;
+            right: 200px;
+            z-index: 1;
+        }
+        
+        @media (max-width: 968px) {
+            .hero-sections {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .text-contents, .image-contents {
+                width: 100%;
+                padding: 40px 20px;
+            }
+            
+            .image-contents {
+                height: auto;
+                min-height: 350px;
+            }
+            
+            .image-contents img {
+                max-height: 300px;
+            }
+            
+            .headings {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .text-contents {
+                padding: 30px 20px;
+            }
+            
+            .headings {
+                font-size: 32px;
+            }
+            
+            .subheading {
+                font-size: 18px;
+            }
+            
+          
+        }
+
+
+        /* Content marquee styles */
+        .testimonial-section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+            font-family: "HV Fitzgerald Bold Italic";
+        }
+        
+        .testimonial-container {
+            display: flex;
+            width: max-content;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            animation: testimonialSlide 40s linear infinite;
+            padding: 0 20px;
+        }
+        
+        .testimonial-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .testimonial-item {
+            flex: 0 0 auto;
+            width: 400px;
+            margin: 0 7px;
+        }
+        
+        /* Quote card styles */
+        .testimonial-card {
+            background-color: #f9f5f0;
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-card-inner {
+            height: 100%;
+            display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers all child elements horizontally */
+  text-align: center; 
+        }
+        
+        .testimonial-quote {
+            margin-bottom: 20px;
+            flex-grow: 1;
+          font-family: "HV Fitzgerald", serif;
+  font-weight: bold;
+  font-style: italic;
+            
+        }
+        
+        .testimonial-quote svg {
+            margin-bottom: 10px;
+            height: 12.1px;
+        
+        }
+        
+        .testimonial-quote p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-family: "HV Fitzgerald Bold Italic";
+        }
+        
+        .testimonial-details {
+            margin-bottom: 20px;
+            font-family: "HV Fitzgerald Bold Italic";
+        }
+        
+        .testimonial-details p {
+            margin-bottom: 5px;
+            font-family: "HV Fitzgerald Bold Italic";
+        }
+        
+        .testimonial-details p:first-child {
+            font-weight: bold;
+            font-family: "HV Fitzgerald Bold Italic";
+        }
+        
+        .testimonial-image {
+            margin-top: auto;
+            text-align: center;
+        }
+        
+        .testimonial-image img {
+            width: 120px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        /* Color themes */
+        .testimonial-bg-primary {
+            background-color: RGB(247,244,235);
+        }
+        
+        .testimonial-bg-secondary {
+            background-color: RGB(171,0,45);
+            color: RGB(246,227,202);
+           
+        }
+        
+        .testimonial-bg-tertiary {
+            background-color: RGB(251,225,197);
+          color:RGB(171,0,45);
+        }
+        
+        .testimonial-bg-accent {
+            background-color: RGB(250,144,0);
+              color: RGB(246,227,202);
+        }
+
+        .testimonial-bg-secondary .testimonial-quote svg { color: RGB(246,227,202); }
+.testimonial-bg-accent .testimonial-quote svg { color: RGB(246,227,202); }
+.testimonial-bg-tertiary .testimonial-quote svg { color: #a1002d; }
+        
+        /* Animation */
+        @keyframes testimonialSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-33.33%);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .testimonial-track {
+                animation-duration: 20s;
+            }
+            
+            .testimonial-item {
+                width: 300px;
+            }
+        }
+
+/* Testimonial Section */
+.how-we-stack-up {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f59101;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-stackup {
+    width: 100%;   /* fixed your "1210%" issue */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-stackup img {
+    max-width: 100%;
+    max-height: 100vh;
+    width: 1050px;
+    height: 1050px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-stackup {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-stackup {
+        padding: 10px;
+    }
+}
+
+
+
+ #LT--template--17182485512332__lt_product_quiz_EqhYNb {
+            background: #f7f4eb;
+            color: #ab002d;
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .luna-container {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .luna-product-quiz__header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .luna-product-quiz__header h2 {
+            font-size: 46px;
+            margin-bottom: 10px;
+            color: #ab002d;
+        }
+        
+        .LT-product-checkbox__tab-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            
+        }
+        
+        .LT-product-checkbox_tab-link {
+            align-items: center;
+            background: #f6e3ca;
+            color: #ab002d;
+            cursor: pointer;
+            display: flex;
+            flex: 1;
+            font-size: 18px;
+            gap: 20px;
+            justify-content: space-between;
+            line-height: 1.3;
+            padding: 10px 0px;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            flex-direction: column;
+            text-align: center;
+            border: 2px solid transparent;
+            flex: 0 0 calc(33.333% - 10px);
+             min-height: 20px;
+        }
+        
+        
+    
+        
+        .LT-product-checkbox_tab-link svg {
+            width: 18px;
+            height: auto;
+        }
+        
+        .LT-product-checkbox_tab-link span {
+            font-size: 16px;
+    line-height: 1.3;
+        }
+        
+        .LT-product-checkbox__tabs {
+            padding-top: 10px;
+        }
+        
+        .LT-product-checkbox_tab {
+            display: none;
+        }
+        
+        .LT-product-checkbox_tab.active {
+            display: block;
+        }
+        
+        .LT-checkbox_tab-wrapper {
+            padding: 0;
+        }
+        
+        .LT-checkbox_tab {
+            background: #f6e3ca;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            min-width: auto;
+
+        }
+        
+        .LT-checkbox_tab-image {
+            flex: 1 1 35%;
+            position: relative;
+        }
+        
+        .LT-checkbox_tab-image-wrapper {
+            min-height: 100%;
+            position: relative;
+           width: 100%;
+            height: 100%;
+        }
+        
+        .LT-checkbox_tab-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .LT-product-tab_sticker {
+            width: 90px;
+            height: auto;
+            position: absolute;
+            top: 15%;
+            right: 295px;
+            z-index: 3;
+            transform: rotate(15deg);
+        }
+        
+        .LT-checkbox_tab-context {
+            align-self: center;
+            flex: 1 1 55%;
+            padding: 25px;
+        }
+        
+        .LT-checkbox_tab-messsage p {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #ab002d;
+        }
+        
+        .LT-checkbox_tab-title h3 {
+            font-size: 32px;
+            margin: 10px auto;
+            color: #ab002d;
+        }
+        
+        .LT-checkbox_tab-content p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #ab002d;
+            margin-bottom: 20px;
+        }
+        
+        .LT-checkbox_tab-testimonial {
+            margin-top: 30px;
+        }
+        
+        .LT-checkbox_tab-testimonial-context p {
+            font-size: 18px;
+            line-height: 1.5;
+        font-family: "HV Fitzgerald", serif; /* fallbacks if font not available */
+  font-weight: bold;
+  font-style: italic;
+            font-weight: 100px;
+            color: #ab002d;
+            padding: 0;
+          
+        }
+        
+      
+        
+        .luna-templates__button {
+            background-color: #ab002d;
+            border: 1px solid #ab002d;
+            color: #ffffff;
+            display: inline-block;
+            padding: 12px 25px;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+        
+        .luna-templates__button:hover {
+            background-color: #f7f4eb;
+            border: 1px solid #ab002d;
+            color: #ab002d;
+        }
+        
+        @media only screen and (max-width: 749px) {
+            #LT--template--17182485512332__lt_product_quiz_EqhYNb {
+                padding: 50px 15px 10px;
+            }
+            
+            .luna-product-quiz__header h2 {
+                font-size: 32px;
+            }
+            
+            .LT-product-checkbox__tab-links {
+                flex-direction: column;
+            }
+            
+            .LT-product-checkbox_tab-link {
+                flex-direction: row;
+                font-size: 16px;
+                justify-content: flex-start;
+                padding: 15px;
+                text-align: left;
+            }
+            
+            .LT-checkbox_tab-wrapper {
+                padding: 0 10px 10px;
+            }
+            
+            .LT-checkbox_tab {
+                flex-direction: column;
+            }
+            
+            .LT-checkbox_tab-image {
+                flex: 1 1 100%;
+            }
+            
+            .LT-product-tab_sticker {
+                left: auto;
+                right: -20px;
+                top: 20px;
+                transform: rotate(15deg);
+            }
+            
+            .LT-checkbox_tab-context {
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .LT-checkbox_tab-title h3 {
+                font-size: 28px;
+            }
+        }
+
+
+
+
+
+    /*beauty-broth-section */
+             .beauty-broth-section {
+            max-width: 2200px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f6e3ca;
+            box-sizing: border-box;
+        }
+        
+      
+        
+           .content-container {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+          .text-content {
+            flex: 1;
+            padding-top: 20px;
+           
+        }
+        
+        .image-content {
+            flex: 1;
+        
+        }
+        
+        .image-content img {
+           --maxWidth: 750px;
+        --overlayOpacity: .5;
+            height: 600px;
+    
+            border-radius: 10px;
+            display: block;
+            padding-left: 150px;
+            padding-top: 50px;
+        }
+        
+        .heading {
+            font-family: 'Adieu-Bold';
+            font-size: 32px;
+            font-weight: 700;
+            color: RGB(203, 126, 0);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            padding-top: 50px;
+            padding-right: 50px;
+        }
+        
+        .benefits-container {
+            display: flex;
+            flex-direction: column;
+            gap: -2.1px;
+            padding-right: 50px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+          padding-right: 50px;
+            background: #f6e3ca;
+        
+        }
+     
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            padding-right: 50px;
+            padding-bottom: -250px;
+            align-items: center;
+            justify-content: center;
+            background: 246, 227, 202;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        
+        .benefit-icon img {
+            max-height:  50px;
+            max-width: 50px;
+            object-fit: contain;
+        }
+        
+        .benefit-text h3 {
+            font-family: 'Adieu-Bold';
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: RGB(203,126,0);
+            margin-bottom: 8px;
+            
+        }
+        
+        .benefit-text p {
+            font-size: 0.95rem;
+            color: RGB(203,126,0);
+            opacity: 0.9;
+            padding-right: 50px;
+            padding-bottom: -70%;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .content-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .heading {
+                font-size: 2rem;
+                text-align: center;
+            }
+            
+            .image-content img {
+                height: 450px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .beauty-broth-section {
+                margin: 40px auto;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            
+            .benefit-icon {
+                align-self: center;
+            }
+            
+            .heading {
+                font-size: 1.8rem;
+            }
+            
+            .image-content img {
+                height: 380px;
+            }
+        }
+
+
+
+        /* Content Marquee Styles */
+        .content-marquee {
+            --topSpacingRatio: 0.02;
+            --bottomSpacingRatio: 0.02;
+            --contentMarqueeDivisor: 4;
+            --contentMarqueeCardCount: 6;
+            --contentMarqueeSpeed: 60s;
+            --contentMarqueeSpeedMobile: 9.23076923076923s;
+            overflow: hidden;
+            background-color: #ab002d; /* Dark background as seen in the example */
+            gap: 20px;
+        }
+        
+        .content-marquee__inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            
+        }
+        
+        .content-marquee__content {
+            display: flex;
+            width: fit-content;
+        }
+        
+        .content-marquee__item {
+            flex: 0 0 250px;
+            margin: 0 15px;
+        }
+        
+        /* Quote Card Styles */
+        .quote-card {
+            display: flex;
+            flex-direction: column;
+            height: 10%;
+        }
+        
+        .quote-card__inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+            padding: 15px 0;
+            width: 40%;
+            margin: 0 auto;
+        }
+        
+        .__align-center {
+            text-align: center;
+        }
+        
+        .quote-card__quote {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .__article-txt-p-sm {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .quote-card__quote p {
+            margin: 0;
+            color: #f8f4ec;
+        }
+        
+        .quote-card__image.image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            padding: 6px;
+        }
+        
+        .quote-card__image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Color Themes */
+        .color-second_theme {
+            color: #f8f4ec;
+        }
+        
+        /* Animation */
+        @keyframes marqueeAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-1 * var(--contentMarqueeCardCount) * 280px));
+            }
+        }
+        
+        .content-marquee__content {
+            animation: marqueeAnimation var(--contentMarqueeSpeed) linear infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content-marquee__item {
+                flex: 0 0 40vw;
+            }
+            
+            .content-marquee__content {
+                animation-duration: var(--contentMarqueeSpeedMobile);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .quote-card__inner {
+                width: 85%;
+                padding: 30px 0;
+            }
+        }
+        
+        /* Pause animation on hover for better UX */
+        .content-marquee__content:hover {
+            animation-play-state: paused;
+        }
+
+
+
+/* Featured Collection - Left aligned with slider */
+        .featured-collection {
+            --topSpacingRatio: 0.1;
+            --bottomSpacingRatio: 0.1;
+            
+            padding: calc(100px * var(--topSpacingRatio)) 0 calc(100px * var(--bottomSpacingRatio));
+            background-color: RGB(247,244,235);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .featured-collection-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 60px;
+            padding: 0 20px;
+        }
+        
+        .collection-header {
+            flex: 0 0 300px;
+        }
+        
+        .featured-collection__text {
+            text-align: left;
+            margin-bottom: 0;
+            padding: 20px;
+            position: sticky;
+            top: 120px;
+        }
+        
+        .featured-collection__text__heading {
+            font-size: 36px;
+            margin-bottom: 15px;
+           margin-right:100px ;
+           margin-left: 50px;
+            color: #ab002d;
+            font-family: "Adieu-Bold";
+        }
+        
+        .featured-collection__text__desc {
+            font-size: 18px;
+            line-height: 1.0;
+            color: #ab002d;
+            margin-left: 50px;
+
+        }
+.featured-collection__text__desc p {
+  margin-top: 0;       /* remove extra gap above paragraph */
+        }
+        
+        .featured-collection__content {
+            flex: 1;
+        }
+        
+        .featured-collection__container {
+            position: relative;
+        }
+        
+        .featured-collection__cards {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Hide scrollbar Firefox */
+            margin-top: 40px;
+            padding: 10px;
+            gap: 20px;
+        }
+        
+        .featured-collection__cards::-webkit-scrollbar {
+            display: none; /* Hide scrollbar Chrome/Safari */
+        }
+        
+        .featured-collection__cards__card {
+           
+            scroll-snap-align: start;
+            background: RGB(247,244,235);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+              min-height: 200%;
+            min-width: 200px;
+        }
+        
+        .featured-collection__cards__card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Product Card Styles */
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            max-height: 200%;
+            min-width: 200px;
+        }
+        
+        .product-card__image {
+            position: relative;
+            width: 100%;
+            height:100%;
+            padding-top: 100%;
+           
+
+        
+        }
+        
+        .product-card__image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-height: 1200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-card__image img {
+            transform: scale(1.05);
+        }
+        
+        .product-card__quick-add-btn {
+            padding: 20px;
+        }
+        
+        .product-card__title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #ab002d;
+            font-weight: 600;
+        }
+        
+        .product-secondary-title {
+            font-size: 14px;
+            color: #ab002d;;
+            margin-bottom: 15px;
+        }
+        
+        .product-card__bottom-price {
+            padding: 5px 20px 2px;
+           
+        
+        }
+        
+        .price__regular {
+            font-size: 20px;
+            font-weight: 10;
+            color: #ab002d;
+            font-family: 'Alexandria Light';
+        }
+        
+        /* Carousel Navigation */
+        .cmnc-flickity-buttons-bottom {
+            position: relative;
+        }
+        
+        .flickity-button {
+            position: absolute;
+            top: 90%;
+            left:90%;
+            transform: translateY(-10%);
+            width: 40px;
+            height: 40px;
+            
+            background: #ab002d;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            border: 1px solid #ab002d;
+            align-items: center;
+            justify-content: center;
+          
+           transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+
+
+        
+
+.luna-templates__button {
+  padding: 0.6rem 2rem;
+  margin: 20px 0;
+  background-color: #ab002d;
+  border: 1px solid #ab002d;
+  color: #ffffff !important;
+  font-size: 16px;
+  text-decoration: none;
+   padding: 12px 30px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+}
+
+        
+        .flickity-button:hover {
+           background-color: transparent;
+  border: 1px solid #ab002d;
+  color: #ab002d !important;
+           
+        }
+        
+        .flickity-button.previous {
+            left: -20px;
+        }
+        
+        .flickity-button.next {
+            right: -20px;
+        }
+        
+        .flickity-button-icon {
+            width: 10px;
+            height: 10px;
+            fill: #ffffff;
+        }
+        
+        .flickity-page-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            list-style: none;
+        }
+        
+        .flickity-page-dots .dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 6px;
+            background: #ab002d;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .flickity-page-dots .dot.is-selected {
+            background: #f6e3ca;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .featured-collection-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .collection-header {
+                flex: 0 0 auto;
+                text-align: center;
+            }
+            
+            .featured-collection__text {
+                position: static;
+            }
+            
+            .flickity-button.previous {
+                left: -22px;
+            }
+            
+            .flickity-button.next {
+                right: -22px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .featured-collection__cards__card {
+                flex: 0 0 calc(50% - 20px);
+            }
+            
+            .featured-collection__text__heading {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-collection__cards__card {
+                flex: 0 0 calc(100% - 20px);
+            }
+            
+            .flickity-button {
+                display: none;
+            }
+            
+            .featured-collection__text__heading {
+                font-size: 24px;
+            }
+            
+            .featured-collection__text__desc {
+                font-size: 16px;
+            }
+        }
+
+
+  /* Spinning Sticker */
+    .spinning-sticker {
+      position: absolute;
+     /* adjust position */ 
+     left: -10px;  /* adjust position */
+      width: 20%; /* sticker size */
+      max-height: 25%;
+      animation: spin 5s linear infinite; /* rotation */
+      filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+
+      
+      
+    }
+
+    .spinning-sticker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+         .featured-blog {
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px 30px;
+        }
+        
+        .featured-blog__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .featured-blog__heading {
+            font-size: 41px;
+            font-weight: 600;
+            color: RGB(171,0,45);
+            letter-spacing: 0.5px;
+            padding-left: 480px;
+        }
+        
+        .navigation-arrows {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .nav-arrow {
+            width: 40px;
+            height: 40px;
+          
+            background-color: RGB(171,0,45);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-arrow:hover {
+             background-color: #f7f4eb;
+            border: 1px solid #ab002d;
+            color: #ab002d;
+        }
+        
+        .featured-blog__articles {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0 30px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            margin-left: 130px;
+            border-radius: 10px;
+        }
+        
+        .featured-blog__articles::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .featured-blog__articles__article-container {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 280px;
+        }
+        
+        .article-card {
+            display: block;
+            text-decoration: none;
+           
+            background: RGB(247,244,235);
+       border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        
+        .article-card__top {
+            position: relative;
+            overflow: hidden;
+            height: 320px; /* Fixed height for all images */
+        }
+        
+        .article-card__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+              will-change: transform;
+        }
+        
+        .article-card:hover .article-card__image {
+            transform: scale(1.05);
+        }
+        
+        .article-card__content {
+            padding: 20px;
+        }
+        
+        .article-card__title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            color: RGB(171,0,45);
+        }
+        
+        .article-card__excerpt {
+            font-size: 14px;
+            line-height: 1.5;
+            color: RGB(171,0,45);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .article-card__btn {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            color: RGB(171,0,45);
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        
+        .article-card__btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: RGB(171,0,45);
+            transition: height 0.2s ease;
+        }
+        
+        .article-card__btn:hover::after {
+            height: 2px;
+        }
+        
+        .featured-blog__btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 12px 24px;
+            background-color: RGB(171,0,45);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: background-color 0.2s ease;
+            text-align: center;
+        }
+        
+        .featured-blog__btn:hover {
+             background-color: #f7f4eb;
+            border: 1px solid #ab002d;
+            color: #ab002d;
+        }
+        
+        @media (max-width: 900px) {
+            .featured-blog__articles__article-container {
+                flex: 0 0 calc(50% - 20px);
+            }
+            
+            .featured-blog__header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .navigation-arrows {
+                align-self: flex-end;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .featured-blog__articles__article-container {
+                flex: 0 0 calc(100% - 20px);
+            }
+            
+            .featured-blog__heading {
+                font-size: 24px;
+            }
+            
+            .article-card__top {
+                height: 200px;
+            }
+        }
+
+
+
+          .footer {
+      background-color: #b4062c; /* Dark Red */
+      color: RGB(246,227,202); /* Warm Cream */
+      padding: 40px 60px;
+      position: relative;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      max-width: 50%;
+    
+    }
+
+    .footer-left h3 {
+      font-weight: bold;
+      margin: 10px 0;
+      font-size: 28px;
+          line-height: 1.15;
+    }
+
+    .footer-left p {
+      font-size: 14px;
+      margin-bottom: 20px;
+          line-height: 1.15;
+          margin-top: 20px;
+    }
+
+    .email-form {
+      display: flex;
+      margin-bottom: 20px;
+      background: white;
+    }
+
+    .email-form input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: #fda981;
+      color: #fff;
+      
+    }
+
+    .email-form button {
+      background: #fda981;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      color: #fff;
+      
+    }
+
+    .social-icons a {
+      color: #fff5e5;
+      font-size: 28px;
+      margin-right: 12px;
+      text-decoration: none;
+      margin-top: 20px;
+     
+    }
+
+    .country-select button {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff5e5;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+      text-align: left;
+      margin-top: 20px;
+      padding-left: 100px ;
+    }
+    .country-select span{
+
+        padding-left: 250px;
+    }
+
+    .footer-right {
+      flex: 1;
+      padding-left: 300px;
+      padding-top: 50px;
+        margin-left: 10px;
+      
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 80px;
+    
+      padding-bottom: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    
+
+    .footer-links h4 {
+   
+      font-size: 24px;
+      font-weight: bold;
+        margin-left: 10px;
+    }
+
+     .footer-links h3 {
+   
+      font-size: 24px;
+      font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      
+        margin: 0;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin: 5px 0;
+      margin-top: 14px;
+      margin-left: 10px;
+    }
+
+    .footer-links ul li a {
+      color: RGB(251,226,198);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-bottom-links {
+      margin: 50px 0;
+      font-size: 13px;
+    }
+
+    .footer-bottom-links a {
+      color: RGB(251,226,198);
+      text-decoration: none;
+      margin: 0px 10px;
+    }
+
+    .payment-icons {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .payment-icons .icon {
+      width: 48px;
+      height: 30px;
+      background: RGB(171,0,45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 13px;
+      color: RGB(251,226,198);
+    }
+
+    .footer-logo {
+      text-align: center;   /* centers inline elements like img */
+      margin-top: 120px;
+    }
+
+    .footer-logo img {
+      max-height: 120px;     /* decrease height of logo */
+      width: auto;          /* keep aspect ratio */
+      display: inline-block; /* makes sure it stays centered */
+    }
+
+    /* Payment types styling */
+    .section-footer__payment__payment-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0px;
+      list-style: none;
+      padding: 0;
+      margin: 0px 0 0 0;
+    }
+
+    .section-footer__payment__payment-types__single {
+   
+    
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 30px;
+    }
+
+    .icon--full-color {
+      width: 100%;
+      height: 100%;
+    }
+
+  .logo-icon img {
+  width: 50px;       /* control image width */
+  height: auto;       /* keeps aspect ratio */
+  display: block;     /* removes inline spacing */
+
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <p> Free shipping on all US subscriptions </p>
+    </div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Logo -->
+            <div class="logo">
+                <a href="file:///C:/Users/Shehryar%20Hafeez%20Awan/Desktop/index.html">
+                    <img src="https://thebeautyandthebroth.com/cdn/shop/files/B_TB_Secondary_Logo_-_Red.png?height=120&v=1707230528" alt="Beauty & the Broth">
+                </a>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="/collections/all-products-excluding-route" class="nav-link">Shop</a>
+                        <div class="dropdown">
+                            <a href="/products/organic-beef-bone-broth" class="dropdown-item">Organic Beef Bone Broth</a>
+                            <a href="file:///C:/Users/Shehryar%20Hafeez%20Awan/Desktop/product.html" class="dropdown-item">Organic Chicken Bone Broth</a>
+                            <a href="/products/vegan-broth-concentrate" class="dropdown-item">Organic Vegan Broth</a>
+                            <a href="/products/organic-mixed-bone-broth-concentrate-2" class="dropdown-item">Organic Mixed Bone Broth</a>
+                            <a href="/products/4-pouch-taster-pack" class="dropdown-item">Broth Starter Pack</a>
+                            <a href="/products/cup-with-sleeve-and-lid" class="dropdown-item">Travel Mugs with Lids</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/benefits" class="nav-link">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/our-story" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://thebeautyandthebroth.com/apps/bubblehouse/rewards/" class="nav-link">Loyalty Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://thebeautyandthebroth.com/apps/bubblehouse/referral/" class="nav-link">Refer and Earn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blogs/recipe-ideas" class="nav-link">Recipes</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Icons - Updated to match the image -->
+            <div class="header-icons">
+                <a href="/search" class="icon-link" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0108 13.7179C11.7372 14.8278 10.0721 15.5 8.25 15.5C4.24594 15.5 1 12.2541 1 8.25C1 4.24594 4.24594 1 8.25 1C12.2541 1 15.5 4.24594 15.5 8.25C15.5 10.0721 14.8278 11.7372 13.7179 13.0108L19.8536 19.1464L19.1464 19.8536L13.0108 13.7179ZM14.5 8.25C14.5 11.7018 11.7018 14.5 8.25 14.5C4.79822 14.5 2 11.7018 2 8.25C2 4.79822 4.79822 2 8.25 2C11.7018 2 14.5 4.79822 14.5 8.25Z" fill="black"></path>
+                    </svg>
+                </a>
+                
+                <a class="login-link" href="/a/account/login">Login</a>
+                
+                <a href="/cart" class="icon-link" aria-label="Cart">
+                    <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.69157 0.690002C7.4318 0.690002 6.22361 1.19045 5.33282 2.08125C4.44202 2.97204 3.94157 4.18022 3.94157 5.44V6H0.781574L0.0115738 17.6C-0.0350324 18.2838 0.0594434 18.9699 0.289133 19.6156C0.518823 20.2614 0.878821 20.853 1.34677 21.3538C1.81472 21.8546 2.38063 22.2538 3.00936 22.5266C3.63808 22.7995 4.31619 22.9402 5.00157 22.94H12.3816C13.0661 22.9401 13.7433 22.7997 14.3713 22.5274C14.9993 22.2552 15.5647 21.8569 16.0325 21.3572C16.5003 20.8575 16.8605 20.2671 17.0909 19.6226C17.3212 18.978 17.4167 18.293 17.3716 17.61L16.6016 6.01H13.4416V5.44C13.4416 4.81622 13.3187 4.19855 13.08 3.62226C12.8413 3.04596 12.4914 2.52232 12.0503 2.08125C11.6093 1.64017 11.0856 1.29028 10.5093 1.05157C9.93302 0.812865 9.31535 0.690002 8.69157 0.690002ZM12.4416 5.44V6H4.94157V5.44C4.94157 4.44544 5.33666 3.49161 6.03992 2.78835C6.74318 2.08509 7.69701 1.69 8.69157 1.69C9.68614 1.69 10.64 2.08509 11.3432 2.78835C12.0465 3.49161 12.4416 4.44544 12.4416 5.44ZM12.4416 7H4.94157V7.56C4.94157 8.55456 5.33666 9.50839 6.03992 10.2117C6.74318 10.9149 7.69701 11.31 8.69157 11.31C9.68614 11.31 10.64 10.9149 11.3432 10.2117C12.0465 9.50839 12.4416 8.55456 12.4416 7.56V7ZM3.94157 7.56V7H1.72157L1.00157 17.67C0.964529 18.2176 1.04055 18.7669 1.22492 19.2838C1.40928 19.8007 1.69804 20.2741 2.07324 20.6746C2.44843 21.0752 2.90202 21.3942 3.40581 21.6119C3.90959 21.8296 4.45277 21.9413 5.00157 21.94H12.3816C12.9295 21.9399 13.4716 21.8272 13.9742 21.6089C14.4768 21.3906 14.9292 21.0714 15.3033 20.671C15.6774 20.2706 15.9653 19.7976 16.1491 19.2814C16.3328 18.7652 16.4086 18.2167 16.3716 17.67L15.6616 7H13.4416V7.56C13.4416 8.81978 12.9411 10.028 12.0503 10.9188C11.1595 11.8096 9.95135 12.31 8.69157 12.31C7.4318 12.31 6.22361 11.8096 5.33282 10.9188C4.44202 10.028 3.94157 8.81978 3.94157 7.56Z" fill="#0A0A08"></path>
+                    </svg>
+                    <span class="cart-details">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+<section class="hero">
+  <div class="LT-WH-text-container-body">
+    
+    <!-- Heading -->
+    <h1 class="luna-templates__heading">
+      <span>The Best Broth <br>You’ll Ever Sip</span>
+    </h1>
+
+    <!-- Paragraph -->
+    <div class="luna-templates__text">
+      <p>
+        Our slow and low simmer and steam method produces nutrient-<br>dense broth concentrates that meet on the corner of boundless<br> beauty &amp; wellness benefits.
+      </p>
+    </div>
+
+    <!-- Button -->
+    <div class="luna-templates__button-container">
+      <a class="luna-templates__button LT__btn-square" href="/collections/all">SHOP NOW</a>
+    </div>
+
+  </div>
+
+<div class="LT-WH-wave-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 280" preserveAspectRatio="none">
+      <g>
+        <path style="fill: #f39100;" 
+              d="M845.2,114.9c-33.3,23.8-68.8,48.6-105.4,67.2c-38.9,19.8-74.2,30.2-108.2,31.7
+                 c-44.2,2.1-92.5-10.3-152-39c-21.3-10.3-42.7-21.9-63.5-33.1c-30-16.2-61-33-93.6-47
+                 C221.8,51.5,108.3,37.3,0,53.9v66.9c99.2-17.2,204-5.1,296.5,34.6
+                 c29.8,12.8,58.1,28.1,88.1,44.4c21.4,11.6,43.6,23.6,66.3,34.5
+                 C515.4,265.3,570.1,280,622,280c4.2,0,8.4-0.1,12.6-0.3
+                 c92.3-4.3,170.4-55,249-111.2c61.9-44.3,125.8-90,196.4-101.8V0
+                 C989.6,11.6,913,66.4,845.2,114.9z"></path>
+      </g>
+      <path style="fill: none;" 
+            id="LTWAVESVG" 
+            d="M-20.3,96.8c110-22.2,226.7-10.2,329.8,34.1c53.6,23,103.2,54.2,155.7,79.5 
+               s109.6,44.9,167.9,42.2c85.8-4,161.4-55.1,231.3-105.1s143.9-102.5,229.5-110"></path>
+   
+               <text id="waveTextContainer" width="100%">
+  <textPath id="waveText" xlink:href="#LTWAVESVG" startOffset="-96.6">
+    <tspan>
+      A happy and healthy gut means a happy and healthy you 
+      A happy and healthy gut means a happy and healthy you 
+      A happy and healthy gut means a happy and healthy you 
+      A happy and healthy gut means a happy and healthy you 
+    </tspan>
+  </textPath>
+</text>
+
+    </svg>
+  </div>
+  
+</section>
+
+
+
+
+
+  <section class="featured-collection">
+        <div class="featured-collection-container">
+            <div class="collection-header">
+                <div class="featured-collection__text">
+                    <h2 class="featured-collection__text__heading">Shop Broths</h2>
+                    <div class="featured-collection__text__desc">
+                        <p>Nutrient-dense organic<br>broth concentrates.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="featured-collection__content">
+                <div class="featured-collection__container cmnc-flickity-buttons-bottom" data-slider="true" data-custom-controls="false">
+                    <div class="featured-collection__cards">
+                        <!-- Product 1: Beef Bone Broth -->
+                        <div class="featured-collection__cards__card">
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="https://thebeautyandthebroth.com/cdn/shop/files/BeautyandtheBrothOrganicBeefBoneBrothFrontofPackIsolated.png?v=1709203998&width=600" alt="Organic Beef Bone Broth Concentrate">
+                                </div>
+                                
+                                <div class="product-card__quick-add-btn">
+                                    <h3 class="product-card__title">Organic Beef Bone Broth Concentrate</h3>
+                                    <p class="product-secondary-title">Ranch raised & 100% grass-fed beef</p>
+                                </div>
+                                
+                                <div class="product-card__bottom-price">
+                                    <div class="price">
+                                        <span class="price__regular">Rs.20,432.30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2: Chicken Bone Broth -->
+                        <div class="featured-collection__cards__card">
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="https://thebeautyandthebroth.com/cdn/shop/files/BeautyandtheBrothOrganicChickenBoneBrothFrontofPackIsolated.png?v=1709204326&width=600" alt="Organic Chicken Bone Broth Concentrate">
+                                </div>
+                                
+                                <div class="product-card__quick-add-btn">
+                                    <h3 class="product-card__title">Organic Chicken Bone Broth Concentrate</h3>
+                                    <p class="product-secondary-title">Free-range & vegetarian-fed chicken</p>
+                                </div>
+                                
+                                <div class="product-card__bottom-price">
+                                    <div class="price">
+                                        <span class="price__regular">Rs.20,432.30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3: Vegan Broth -->
+                        <div class="featured-collection__cards__card">
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="https://thebeautyandthebroth.com/cdn/shop/files/BeautyandtheBrothOrganicMushroomBrothFrontofPackIsolated.png?v=1709203651&width=600" alt="Vegan Broth Concentrate">
+                                </div>
+                                
+                                <div class="product-card__quick-add-btn">
+                                    <h3 class="product-card__title">Vegan Broth Concentrate</h3>
+                                    <p class="product-secondary-title">Made with organic mushrooms and seaweed</p>
+                                </div>
+                                
+                                <div class="product-card__bottom-price">
+                                    <div class="price">
+                                        <span class="price__regular">Rs.20,432.30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 4: Starter Pack -->
+                        <div class="featured-collection__cards__card">
+                            <div class="product-card">
+                                <div class="product-card__image">
+                                    <img src="https://thebeautyandthebroth.com/cdn/shop/files/BrothConcentrateStarterPackFrontofPackIsolated.png?v=1709204856&width=600" alt="Broth Concentrate Starter Pack">
+                                </div>
+                                
+                                <div class="product-card__quick-add-btn">
+                                    <h3 class="product-card__title">Broth Concentrate Starter Pack</h3>
+                                    <p class="product-secondary-title">Try all our beautiful broths</p>
+                                </div>
+                                
+                                <div class="product-card__bottom-price">
+                                    <div class="price">
+                                        <span class="price__regular">Rs.9,784.48</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <button class="flickity-button flickity-prev-next-button previous" type="button" aria-label="Previous">
+                        <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                            <path d="M38.39,17.65a3.91,3.91,0,0,0-1.12-1.51,3.83,3.83,0,0,0-1.69-.8A3.84,3.84,0,0,0,32.1,16.4L1.33,47.17a3.83,3.83,0,0,0-.83,4.2,3.85,3.85,0,0,0,.83,1.25L32.1,83.38a3.81,3.81,0,0,0,2.72,1.13,3.85,3.85,0,0,0,2.73-6.57L13.34,53.74h83a3.85,3.85,0,1,0,0-7.69h-83l24.21-24.2a3.8,3.8,0,0,0,1.05-2A3.86,3.86,0,0,0,38.39,17.65Z" class="arrow"></path>
+                        </svg>
+                    </button>
+                    <button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Next">
+                        <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                            <path d="M38.39,17.65a3.91,3.91,0,0,0-1.12-1.51,3.83,3.83,0,0,0-1.69-.8A3.84,3.84,0,0,0,32.1,16.4L1.33,47.17a3.83,3.83,0,0,0-.83,4.2,3.85,3.85,0,0,0,.83,1.25L32.10,83.38a3.81,3.81,0,0,0,2.72,1.13,3.85,3.85,0,0,0,2.73-6.57L13.34,53.74h83a3.85,3.85,0,1,0,0-7.69h-83l24.21-24.2a3.8,3.8,0,0,0,1.05-2A3.86,3.86,0,0,0,38.39,17.65Z" class="arrow" transform="translate(100, 100) rotate(180)"></path>
+                        </svg>
+                    </button>
+                    
+                    <ol class="flickity-page-dots">
+                        <li class="dot is-selected" aria-label="Page dot 1" tabindex="0" aria-current="step"></li>
+                        <li class="dot" aria-label="Page dot 2" tabindex="0"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="shopify-section-template--17182485512332__content_marquee_cb7bUA" class="shopify-section">
+        <div id="Content-marquee-template--17182485512332__content_marquee_cb7bUA" class="content-marquee color-second_theme">
+            <div class="content-marquee__inner">
+                <div class="content-marquee__content">
+                    <!-- First Set -->
+                    <div class="quote-card content-marquee__item __align-center color-second_theme">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__quote __article-txt-p-sm">
+                                <p><strong>AS SEEN IN</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Glamour_4b0fb2aa-bd0a-4930-82bb-55a54ec52353.png?v=1707231073" alt="Glamour Magazine" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Natural_Health.png?v=1707231138" alt="Natural Health Magazine" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Goop.png?v=1707231156" alt="Goop" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Travel_Leisure.png?v=1707231170" alt="Travel + Leisure" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/New_York.png?v=1707231181" alt="New York Magazine" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicated Set for Continuous Animation -->
+                    <div class="quote-card content-marquee__item __align-center color-second_theme">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__quote __article-txt-p-sm">
+                                <p><strong>AS SEEN IN</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Glamour_4b0fb2aa-bd0a-4930-82bb-55a54ec52353.png?v=1707231073" alt="Glamour Magazine" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Natural_Health.png?v=1707231138" alt="Natural Health Magazine" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Goop.png?v=1707231156" alt="Goop" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Travel_Leisure.png?v=1707231170" alt="Travel + Leisure" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-card content-marquee__item __align-center">
+                        <div class="quote-card__inner __crop-default">
+                            <div class="quote-card__image image-container">
+                                <img src="https://thebeautyandthebroth.com/cdn/shop/files/New_York.png?v=1707231181" alt="New York Magazine" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+  <section class="beauty-broth-section">
+        <div class="image-content">
+        
+        <!-- Spinning Sticker -->
+        <img class="spinning-sticker" src="https://thebeautyandthebroth.com/cdn/shop/files/Farm_to_pouch_sticker.png?v=1707236386&width=500" alt="Farm to Pouch Sticker">
+        </div>
+        <div class="content-container">
+            
+            <div class="text-content">
+                <h2 class="heading">A Better Broth for the Benefits You Crave</h2>
+                
+                <div class="benefits-container">
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Whole-body_wellbeing.png?height=100&v=1707230312" alt="Whole Body Wellbeing">
+                        
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Whole-Body Wellbeing</h3>
+                            <p>A natural powerhouse for gut health, inflammation reduction, and collagen-rich anti-aging benefits.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Best_ingredients.png?height=100&v=1707230327" alt="Best Ingredients">
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Only The Best Ingredients</h3>
+                            <p>Crafted with premium, USDA organic ingredients for superior quality and flavour.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/5x_the_nutrients.png?height=100&v=1707230336" alt="5x Nutrients">
+                        </div>
+                        <div class="benefit-text">
+                            <h3>5x The Nutrients</h3>
+                            <p>5x the nutrients and benefits than any reconstituted competitor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/More_energy_clarity.png?height=100&v=1707230344" alt="Energy and Clarity">
+                        </div>
+                        <div class="benefit-text">
+                            <h3>More Energy & Clarity</h3>
+                            <p>Increased energy, clarity and mood.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-content">
+                <img src="https://thebeautyandthebroth.com/cdn/shop/files/B_TB-1.jpg?v=1707231352&width=1100" alt="Beauty & the Broth Product">
+            </div>
+
+        
+    </section>
+
+
+
+
+     <section id="LT--template--17182485512332__lt_product_quiz_EqhYNb">
+        <div class="luna-container">
+            <div class="luna-product-quiz">
+                <div class="luna-product-quiz__header">
+                    <h2>Which Broth is for me?</h2>
+                </div>
+                
+                <div class="LT-product-checkbox__header">
+                    <div class="LT-product-checkbox__tab-links">
+                        <label class="LT-product-checkbox_tab-link active" for="tab-tab_kV4Vhr">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="66.713" height="70.075" viewBox="0 0 61.713 60.075">
+                                <g data-name="Rectangle 23" transform="translate(0 4.075)" fill="#fff" stroke="currentColor" stroke-width="3">
+                                    <rect width="50" height="56" stroke="none"></rect>
+                                    <rect x="1" y="1" width="50" height="54" fill="none"></rect>
+                                </g>
+                                <path data-name="Path 6" d="M4926.96,1070.556s-.958-1.743,5.143-4.271,7.233,2.963,11.5,10.851,5.229,7.67,5.229,7.67l19.11-37.561s2.485-3.461,5.947-3.314,5.45.074,4.64,1.1-15.1,33.141-22.83,43.6-16.938,1.694-16.938,1.694Z" transform="translate(-4917 -1043.925)" fill="#464646"></path>
+                            </svg>
+                            <span>I want a light, versatile flavor</span>
+                        </label>
+                        
+                        <label class="LT-product-checkbox_tab-link" for="tab-tab_UYr9tU">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="61.713" height="60.075" viewBox="0 0 61.713 60.075">
+                                <g data-name="Rectangle 23" transform="translate(0 4.075)" fill="#fff" stroke="currentColor" stroke-width="3">
+                                    <rect width="56" height="56" stroke="none"></rect>
+                                    <rect x="1" y="1" width="54" height="54" fill="none"></rect>
+                                </g>
+                                <path data-name="Path 6" d="M4926.96,1070.556s-.958-1.743,5.143-4.271,7.233,2.963,11.5,10.851,5.229,7.67,5.229,7.67l19.11-37.561s2.485-3.461,5.947-3.314,5.45.074,4.64,1.1-15.1,33.141-22.83,43.6-16.938,1.694-16.938,1.694Z" transform="translate(-4917 -1043.925)" fill="#464646"></path>
+                            </svg>
+                            <span>I like rich, full-bodied flavor</span>
+                        </label>
+                        
+                        <label class="LT-product-checkbox_tab-link" for="tab-tab_WAXGqB">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="61.713" height="60.075" viewBox="0 0 61.713 60.075">
+                                <g data-name="Rectangle 23" transform="translate(0 4.075)" fill="#fff" stroke="currentColor" stroke-width="3">
+                                    <rect width="56" height="56" stroke="none"></rect>
+                                    <rect x="1" y="1" width="54" height="54" fill="none"></rect>
+                                </g>
+                                <path data-name="Path 6" d="M4926.96,1070.556s-.958-1.743,5.143-4.271,7.233,2.963,11.5,10.851,5.229,7.67,5.229,7.67l19.11-37.561s2.485-3.461,5.947-3.314,5.45.074,4.64,1.1-15.1,33.141-22.83,43.6-16.938,1.694-16.938,1.694Z" transform="translate(-4917 -1043.925)" fill="#464646"></path>
+                            </svg>
+                            <span>I want a vegan collagen boost</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="LT-product-checkbox__body">
+                    <div class="LT-product-checkbox__tabs">
+                        <!-- Chicken Broth Tab -->
+                        <div class="LT-product-checkbox_tab active" id="tab-tab_kV4Vhr">
+                            <div class="LT-checkbox_tab-wrapper">
+                                <div class="LT-checkbox_tab">
+                                    <div class="LT-checkbox_tab-image">
+                                        <img src="https://thebeautyandthebroth.com/cdn/shop/files/PRODUCT_QUIZ_STICKER.png?v=1707233626&width=658" alt="" class="LT-product-tab_sticker">
+                                        <div class="LT-checkbox_tab-image-wrapper">
+                                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/BeautyandtheBrothOrganicChickenBoneBrothFrontofPackIsolated.png?v=1709204326&width=600" alt="Organic Chicken Bone Broth">
+                                        </div>
+                                    </div>
+                                    <div class="LT-checkbox_tab-context">
+                                        <div class="LT-checkbox_tab-messsage">
+                                            <p>YOU SHOULD GET</p>
+                                        </div>
+                                        <div class="LT-checkbox_tab-title">
+                                            <h3>Organic Chicken Bone Broth</h3>
+                                        </div>
+                                        <div class="LT-checkbox_tab-content">
+                                            <p>If you're looking for a bone broth that packs a punch of nutrition and flavor, look no further. Our broth concentrate is made from slow-simmering and repeatedly steaming high-quality, organic ingredients.</p>
+                                        </div>
+                                        <div class="LT-checkbox_tab-testimonial">
+                                            <div class="LT-checkbox_tab-testimonial-context">
+                                                <p><strong>Revitalize with our chicken broth, crafted with healing turmeric and ginger for ultimate relaxation and detox!</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="luna-templates__button-container">
+                                            <a class="luna-templates__button" href="/products/organic-chicken-bone-broth">SHOP NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Beef Broth Tab -->
+                        <div class="LT-product-checkbox_tab" id="tab-tab_UYr9tU">
+                            <div class="LT-checkbox_tab-wrapper">
+                                <div class="LT-checkbox_tab">
+                                    <div class="LT-checkbox_tab-image">
+                                        <img src="https://thebeautyandthebroth.com/cdn/shop/files/PRODUCT_QUIZ_STICKER_7c6cea50-526e-43f5-ba0d-65e9e4f57331.png?v=1707233676&width=658" alt="" class="LT-product-tab_sticker">
+                                        <div class="LT-checkbox_tab-image-wrapper">
+                                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/BeautyandtheBrothOrganicBeefBoneBrothFrontofPackIsolated.png?v=1709203998&width=600" alt="Organic Beef Bone Broth">
+                                        </div>
+                                    </div>
+                                    <div class="LT-checkbox_tab-context">
+                                        <div class="LT-checkbox_tab-messsage">
+                                            <p>YOU SHOULD GET</p>
+                                        </div>
+                                        <div class="LT-checkbox_tab-title">
+                                            <h3>Organic Beef Bone Broth</h3>
+                                        </div>
+                                        <div class="LT-checkbox_tab-content">
+                                            <p>If you're looking for a bone broth that packs a punch of nutrition and flavor, look no further. Our broth concentrate is made from slow-simmering and repeatedly steaming high-quality, organic ingredients.</p>
+                                        </div>
+                                        <div class="LT-checkbox_tab-testimonial">
+                                            <div class="LT-checkbox_tab-testimonial-context">
+                                                <p><strong>Experience the rich depth of our beef broth with a hint of tomato for your perfect post-workout boost!</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="luna-templates__button-container">
+                                            <a class="luna-templates__button" href="/products/organic-beef-bone-broth">SHOP NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Vegan Broth Tab -->
+                        <div class="LT-product-checkbox_tab" id="tab-tab_WAXGqB">
+                            <div class="LT-checkbox_tab-wrapper">
+                                <div class="LT-checkbox_tab">
+                                    <div class="LT-checkbox_tab-image">
+                                        <img src="https://thebeautyandthebroth.com/cdn/shop/files/PRODUCT_QUIZ_STICKER_7c6cea50-526e-43f5-ba0d-65e9e4f57331.png?v=1707233676&width=658" alt="" class="LT-product-tab_sticker">
+                                        <div class="LT-checkbox_tab-image-wrapper">
+                                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/BeautyandtheBrothOrganicMushroomBrothFrontofPackIsolated.png?v=1709203651&width=600" alt="Organic Vegan Broth">
+                                        </div>
+                                    </div>
+                                    <div class="LT-checkbox_tab-context">
+                                        <div class="LT-checkbox_tab-messsage">
+                                            <p>YOU SHOULD GET</p>
+                                        </div>
+                                        <div class="LT-checkbox_tab-title">
+                                            <h3>Organic Vegan Broth</h3>
+                                        </div>
+                                        <div class="LT-checkbox_tab-content">
+                                            <p>If you're looking for a bone broth that packs a punch of nutrition and flavor, look no further. Our broth concentrate is made from slow-simmering and repeatedly steaming high-quality, organic ingredients.</p>
+                                        </div>
+                                        <div class="LT-checkbox_tab-testimonial">
+                                            <div class="LT-checkbox_tab-testimonial-context">
+                                                <p><strong>Savor the rich umami of our vegan broth, infused with the flavors of seaweed and mushrooms!</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="luna-templates__button-container">
+                                            <a class="luna-templates__button" href="/products/vegan-broth-concentrate">SHOP NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+ <div class="container">
+        <section class="hero-sections">
+            <div class="text-contents">
+                <p class="subheading">Can't decide? Try them all</p>
+                <h1 class="headings">Broth<br>  Concentrate <br>Starter Pack</h1>
+                 <a class="luna-templates__button2 LT__btn-square" href="/collections/all">SHOP NOW</a>
+            </div>
+            <div class="image-contents">
+                <img src="https://thebeautyandthebroth.com/cdn/shop/files/Broth_Starter_Pack_79b94604-3c62-49a8-98b5-0ee848b36dce.png?v=1707231685&width=600" alt="Broth Concentrate Starter Pack">
+            </div>
+        </section>
+
+
+
+    <section class="testimonial-section testimonial-bg-primary">
+        <div class="testimonial-container">
+            <div class="testimonial-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card testimonial-item testimonial-bg-secondary">
+                    <div class="testimonial-card-inner">
+                        <div class="testimonial-quote">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17c0 2.86 2.31 5.17 5.17 5.17H9v-4H7.17A1.17 1.17 0 0 1 6 11.17 1.17 1.17 0 0 1 7.17 10H9V6H7.17zm9.66 0A5.17 5.17 0 0 0 12 11.17c0 2.86 2.31 5.17 5.17 5.17H18v-4h-1.83A1.17 1.17 0 0 1 15 11.17 1.17 1.17 0 0 1 16.17 10H18V6h-1.17z"/>
+</svg>
+                            <p>My favorite home broils, I love that I can travel with it anywhere and get the finest organic nutrients. We know that beauty comes from within. I love this product because it's shelf stable and has zero preservatives. It also has great free range, antibiotic-free ingredients—and the chicken is firm. Many organic chickens have salt added so you're not going to wake up with a puffy face. Each serving has 10g of protein so it's just what you need and it's still stronger than regular broils. The best part is knowing all ingredients which I love because you never know what you're getting in a bone broth.</p>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M16.83 18A5.17 5.17 0 0 0 22 12.83c0-2.86-2.31-5.17-5.17-5.17H15v4h1.83A1.17 1.17 0 0 1 18 12.83 1.17 1.17 0 0 1 16.83 14H15v4h1.83zm-9.66 0A5.17 5.17 0 0 0 12 12.83c0-2.86-2.31-5.17-5.17-5.17H6v4h1.83A1.17 1.17 0 0 1 9 12.83 1.17 1.17 0 0 1 7.83 14H6v4h1.17z"/>
+</svg>
+                        </div>
+                        <div class="testimonial-details">
+                            <p><strong>Dr Nigma Talib</strong></p>
+                            <p>Celebrity Naturopathic doctor, author, aesthetician, and leading authority on holistic health</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Dr.Nigma_Profile.png?v=1714720161&width=352" alt="Dr Nigma Talib">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card testimonial-item testimonial-bg-accent">
+                    <div class="testimonial-card-inner">
+                        <div class="testimonial-quote">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17c0 2.86 2.31 5.17 5.17 5.17H9v-4H7.17A1.17 1.17 0 0 1 6 11.17 1.17 1.17 0 0 1 7.17 10H9V6H7.17zm9.66 0A5.17 5.17 0 0 0 12 11.17c0 2.86 2.31 5.17 5.17 5.17H18v-4h-1.83A1.17 1.17 0 0 1 15 11.17 1.17 1.17 0 0 1 16.17 10H18V6h-1.17z"/>
+</svg>
+                            <p>I LOVE the Beauty & the Broth organic bone broth selection! Not only does it taste amazing, the nutritional profile is equally remarkable. I ESPECIALLY LOVE the vegan broth. These formulas are rich in glutamine, gluten-free, artificial amino acid that supports nourishing the intestinal tract. Beauty & the Broth is a beauty elixir with transformative powers. For anyone seeking a sophisticated yet effective approach to inner beauty and holistic wellness.</p>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M16.83 18A5.17 5.17 0 0 0 22 12.83c0-2.86-2.31-5.17-5.17-5.17H15v4h1.83A1.17 1.17 0 0 1 18 12.83 1.17 1.17 0 0 1 16.83 14H15v4h1.83zm-9.66 0A5.17 5.17 0 0 0 12 12.83c0-2.86-2.31-5.17-5.17-5.17H6v4h1.83A1.17 1.17 0 0 1 9 12.83 1.17 1.17 0 0 1 7.83 14H6v4h1.17z"/>
+</svg>
+                        </div>
+                        <div class="testimonial-details">
+                            <p><strong>Teri Cochrane</strong></p>
+                            <p>Founder of Tori Cochrane's Project Nutrition, an International thought teacher in longevity and a pioneer in personalized wellness</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Teri_Cochrane.png?v=1710953619&width=195" alt="Teri Cochrane">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card testimonial-item testimonial-bg-secondary">
+                    <div class="testimonial-card-inner">
+                        <div class="testimonial-quote">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17c0 2.86 2.31 5.17 5.17 5.17H9v-4H7.17A1.17 1.17 0 0 1 6 11.17 1.17 1.17 0 0 1 7.17 10H9V6H7.17zm9.66 0A5.17 5.17 0 0 0 12 11.17c0 2.86 2.31 5.17 5.17 5.17H18v-4h-1.83A1.17 1.17 0 0 1 15 11.17 1.17 1.17 0 0 1 16.17 10H18V6h-1.17z"/>
+</svg>
+                            <p>I personally drink bone broth daily. AND it is a big part of all protocols I put my fertility clients on. With that, I am extremely particular about ingredients and cooking processes when it comes to bone broth. When I found Beauty & The Broth and learned about their quality ingredients and proper cooking methods, PLUS their convenient way to throw in your bag and take anywhere packaging; I jumped right in. Their products are amazing thoughtful and nutrient dense and should be a part of your daily health routine!</p>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M16.83 18A5.17 5.17 0 0 0 22 12.83c0-2.86-2.31-5.17-5.17-5.17H15v4h1.83A1.17 1.17 0 0 1 18 12.83 1.17 1.17 0 0 1 16.83 14H15v4h1.83zm-9.66 0A5.17 5.17 0 0 0 12 12.83c0-2.86-2.31-5.17-5.17-5.17H6v4h1.83A1.17 1.17 0 0 1 9 12.83 1.17 1.17 0 0 1 7.83 14H6v4h1.17z"/>
+</svg>
+                        </div>
+                        <div class="testimonial-details">
+                            <p><strong>Aimee Raupp</strong></p>
+                            <p>Women's Health & Fertility Expert</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Aimee_Raupp.png?v=1710952850&width=352" alt="Aimee Raupp">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card testimonial-item testimonial-bg-tertiary">
+                    <div class="testimonial-card-inner">
+                        <div class="testimonial-quote">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17c0 2.86 2.31 5.17 5.17 5.17H9v-4H7.17A1.17 1.17 0 0 1 6 11.17 1.17 1.17 0 0 1 7.17 10H9V6H7.17zm9.66 0A5.17 5.17 0 0 0 12 11.17c0 2.86 2.31 5.17 5.17 5.17H18v-4h-1.83A1.17 1.17 0 0 1 15 11.17 1.17 1.17 0 0 1 16.17 10H18V6h-1.17z"/>
+</svg>
+                            <p>As a functional medicine expert, I've dedicated years to consulting patients worldwide. In my commitment to supporting gut health naturally through food, I consistently advocate for The Beauty and The Broth's bone broths. The brand's UNWAVERING DEDICATION to sourcing high-quality, organic ingredients reflect their commitment to purity and excellence. Introducing this nourishing elixir into your daily routine is a simple yet PROFOUND step towards enhancing your overall well-being.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M16.83 18A5.17 5.17 0 0 0 22 12.83c0-2.86-2.31-5.17-5.17-5.17H15v4h1.83A1.17 1.17 0 0 1 18 12.83 1.17 1.17 0 0 1 16.83 14H15v4h1.83zm-9.66 0A5.17 5.17 0 0 0 12 12.83c0-2.86-2.31-5.17-5.17-5.17H6v4h1.83A1.17 1.17 0 0 1 9 12.83 1.17 1.17 0 0 1 7.83 14H6v4h1.17z"/>
+</svg>
+                        </div>
+                        <div class="testimonial-details">
+                            <p><strong>Dr Will Cole</strong></p>
+                            <p>Leading functional medicine expert, NYT bestselling author, host of The Art of Being Well podcast</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Will_Cole.png?v=1710953087&width=352" alt="Dr Will Cole">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="how-we-stack-up">
+        <div class="image-stackup">
+            <img src="https://thebeautyandthebroth.com/cdn/shop/files/Competitor_Chart_e2180892-eff7-43bc-9786-aeb426b93e84.jpg?v=1713198065&width=1400" 
+                 alt="Comparison chart showing how Beauty & the Broth compares to other brands" 
+                 loading="lazy">
+        </div>
+    </section>
+
+
+
+
+
+
+ <section class="featured-blog">
+        <div class="featured-blog__header">
+            <h2 class="featured-blog__heading">Get Inspired</h2>
+            <div class="navigation-arrows">
+                <button class="nav-arrow prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-arrow next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="featured-blog__inner">
+            <ul class="featured-blog__articles">
+                <!-- Article 1 -->
+                <li class="featured-blog__articles__article-container">
+                    <a class="article-card" href="#">
+                        <div class="article-card__top">
+                            <img class="article-card__image" src="https://thebeautyandthebroth.com/cdn/shop/articles/IMG_4622.jpg?v=1721163393&width=840" alt="4 Ways to Incorporate Bone Broth">
+                        </div>
+                        <div class="article-card__content">
+                            <h3 class="article-card__title">4 Ways to Incorporate Bone Broth Into Your Diet</h3>
+                            <p class="article-card__excerpt">With Beauty & the Broth Bone Broth, incorporating bone broth into your diet has never been easier or more delicious...</p>
+                            <span class="article-card__btn">READ MORE</span>
+                        </div>
+                    </a>
+                </li>
+                
+                <!-- Article 2 -->
+                <li class="featured-blog__articles__article-container">
+                    <a class="article-card" href="#">
+                        <div class="article-card__top">
+                            <img class="article-card__image" src="https://thebeautyandthebroth.com/cdn/shop/articles/Gingersnaps-6.1.jpg?v=1673873850&width=840" alt="Ginger Snap Cookies">
+                        </div>
+                        <div class="article-card__content">
+                            <h3 class="article-card__title">Ginger Snap Cookies Recipe</h3>
+                            <p class="article-card__excerpt">You will love these perfectly crisp and chewy gingersnap cookies because they taste just like heaven! These easy-to-make...</p>
+                            <span class="article-card__btn">READ MORE</span>
+                        </div>
+                    </a>
+                </li>
+                
+                <!-- Article 3 -->
+                <li class="featured-blog__articles__article-container">
+                    <a class="article-card" href="#">
+                        <div class="article-card__top">
+                            <img class="article-card__image" src="https://thebeautyandthebroth.com/cdn/shop/articles/93748094.webp?v=1669726516&width=840" alt="Cinnamon and Coconut Fat Bombs">
+                        </div>
+                        <div class="article-card__content">
+                            <h3 class="article-card__title">Cinnamon and Coconut Fat Bombs</h3>
+                            <p class="article-card__excerpt">Whether you are taking them to a party or snacking late at night, Cinnamon and Coconut Fat Bombs are a perfect treat...</p>
+                            <span class="article-card__btn">READ MORE</span>
+                        </div>
+                    </a>
+                </li>
+                
+                <!-- Article 4 -->
+                <li class="featured-blog__articles__article-container">
+                    <a class="article-card" href="#">
+                        <div class="article-card__top">
+                            <img class="article-card__image" src="https://thebeautyandthebroth.com/cdn/shop/articles/Untitled.png?v=1669211848&width=840" alt="Herb Roasted Turkey Legs">
+                        </div>
+                        <div class="article-card__content">
+                            <h3 class="article-card__title">Herb Roasted Turkey Legs</h3>
+                            <p class="article-card__excerpt">There's no doubt that turkey legs are one of my new favorite foods. All the turkey goodness is yours without the fuss...</p>
+                            <span class="article-card__btn">READ MORE</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <a href="#" class="featured-blog__btn">READ ALL</a>
+    </section>
+
+
+     <footer class="footer">
+    <div class="footer-top">
+      <!-- Left Side -->
+      <div class="footer-left">
+        <div class="logo-icon">
+          <!-- Example Icon (replace with SVG from site) -->
+         <img src="https://thebeautyandthebroth.com/cdn/shop/files/B_TB_Submark_-_Gold.svg?v=1709230178&width=100" alt="Description of the image">
+        </div>
+
+        <h3>Keep us with us</h3>
+        <p>Be the first to receive new releases, special offers and more</p>
+
+        <form class="email-form">
+          <input type="email" placeholder="Email">
+          <button type="submit"><i class="fa fa-arrow-right"></i></button>
+        </form>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="country-select">
+          <button>COUNTRY <span>+</span></button>
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="footer-right">
+        <div class="footer-links">
+          <div>
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="#">Beef Broth</a></li>
+              <li><a href="#">Chicken Broth</a></li>
+              <li><a href="#">Vegan Broth</a></li>
+              <li><a href="#">Starter Pack</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Learn</h3>
+            <ul>
+              <li><a href="#">Benefits</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Recipes</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Site Credits</a> |
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Terms</a> |
+          <a href="#">Refunds</a> |
+          <a href="#">Shipping</a>
+        </div>
+
+        <!-- Payment Icons Section - Replaced with SVG code -->
+        <ul class="section-footer__payment__payment-types" role="list">
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pi-american_express" viewBox="0 0 38 24" width="38" height="24">
+              <title id="pi-american_express">American Express</title>
+              <path fill="#000" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z" opacity=".07"></path>
+              <path fill="#006FCF" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z"></path>
+              <path fill="#FFF" d="M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z"></path>
+              <path fill="#006FCF" d="M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z"></path>
+              <path fill="#006FCF" d="m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z"></path>
+              <path fill="#FFF" d="M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z"></path>
+              <path fill="#006FCF" d="m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z"></path>
+              <path fill="#006FCF" d="M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z"></path>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" x="0" y="0" width="38" height="24" viewBox="0 0 165.521 105.965" xml:space="preserve" aria-labelledby="pi-apple_pay">
+              <title id="pi-apple_pay">Apple Pay</title>
+              <path fill="#000" d="M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0-.974 2.96 9.897 9.897 0 0 0-1.83 2.52 9.874 9.874 0 0 0-2.52 1.83c-.947.483-1.917.79-2.96.977-1.025.183-2.073.245-3.112.273-.477.011-.953.017-1.43.02-.565.004-1.132.004-1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z"></path>
+              <path fill="#FFF" d="M150.698 3.532l1.672.003c.452.003.905.008 1.36.20.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.20 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.20 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.20-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.20-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .20-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.20l1.677-.003h135.875"></path>
+              <g><g><path fill="#000" d="M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858"></path>
+              <path fill="#000" d="M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048"></path></g></g>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-diners_club">
+              <title id="pi-diners_club">Diners Club</title>
+              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+              <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+              <path d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z" fill="#3086C8"></path>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title id="pi-discover">Discover</title>
+              <path fill="#000" opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+              <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#fff"></path>
+              <path d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z" fill="#231F20"></path>
+              <path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint0_linear)"></path>
+              <path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint1_linear)"></path>
+              <path d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z" fill="#231F20"></path>
+              <path d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z" fill="#231F20"></path>
+              <path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z" fill="#F48120"></path>
+              <defs>
+                <linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F89F20"></stop>
+                  <stop offset=".25" stop-color="#F79A20"></stop>
+                  <stop offset=".533" stop-color="#F68D20"></stop>
+                  <stop offset=".62" stop-color="#F58720"></stop>
+                  <stop offset=".723" stop-color="#F48120"></stop>
+                  <stop offset="1" stop-color="#F37521"></stop>
+                </linearGradient>
+                <linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F58720"></stop>
+                  <stop offset=".359" stop-color="#E16F27"></stop>
+                  <stop offset=".703" stop-color="#D4602C"></stop>
+                  <stop offset=".982" stop-color="#D05B2E"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" aria-labelledby="pi-google_pay">
+              <title id="pi-google_pay">Google Pay</title>
+              <path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"></path>
+              <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"></path>
+              <path d="M18.093 11.976v3.2h-1.018v-7.9h2.691a2.447 2.447 0 0 1 1.747.692 2.28 2.28 0 0 1 .11 3.224l-.11.116c-.47.447-1.098.69-1.747.674l-1.673-.006zm0-3.732v2.788h1.698c.377.012.741-.135 1.005-.404a1.391 1.391 0 0 0-1.005-2.354l-1.698-.03zm6.484 1.348c.65-.03 1.286.188 1.778.613.445.43.682 1.03.65 1.649v3.334h-.969v-.766h-.049a1.93 1.93 0 0 1-1.673.931 2.17 2.17 0 0 1-1.496-.533 1.667 1.667 0 0 1-.613-1.324 1.606 1.606 0 0 1 .613-1.336 2.746 2.746 0 0 1 1.698-.515c.517-.02 1.03.093 1.49.331v-.208a1.134 1.134 0 0 0-.417-.901 1.416 1.416 0 0 0-.98-.368 1.545 1.545 0 0 0-1.319.717l-.895-.564a2.488 2.488 0 0 1 2.182-1.06zM23.29 13.52a.79.79 0 0 0 .337.662c.223.176.5.269.785.263.429-.001.84-.17 1.146-.472.305-.286.478-.685.478-1.103a2.047 2.047 0 0 0-1.324-.374 1.716 1.716 0 0 0-1.03.294.883.883 0 0 0-.392.73zm9.286-3.75l-3.39 7.79h-1.048l1.281-2.728-2.224-5.062h1.103l1.612 3.885 1.569-3.885h1.097z" fill="#5F6368"></path>
+              <path d="M13.986 11.284c0-.308-.024-.616-.073-.92h-4.29v1.747h2.451a2.096 2.096 0 0 1-.9 1.373v1.134h1.464a4.433 4.433 0 0 0 1.348-3.334z" fill="#4285F4"></path>
+              <path d="M9.629 15.721a4.352 4.352 0 0 0 3.01-1.097l-1.466-1.14a2.752 2.752 0 0 1-4.094-1.44H5.577v1.17a4.53 4.53 0 0 0 4.052 2.507z" fill="#34A853"></path>
+              <path d="M7.079 12.05a2.709 2.709 0 0 1 0-1.735v-1.17H5.577a4.505 4.505 0 0 0 0 4.075l1.502-1.17z" fill="#FBBC04"></path>
+              <path d="M9.629 8.44a2.452 2.452 0 0 1 1.74.68l1.3-1.293a4.37 4.37 0 0 0-3.065-1.183 4.53 4.53 0 0 0-4.027 2.5l1.502 1.171a2.715 2.715 0 0 1 2.55-1.875z" fill="#EA4335"></path>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" width="38" height="24" role="img" aria-labelledby="pi-jcb" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg">
+              <title id="pi-jcb">JCB</title>
+              <g fill="none" fill-rule="evenodd">
+                <g fill-rule="nonzero">
+                  <path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"></path>
+                  <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"></path>
+                </g>
+                <path d="M11.5 5H15v11.5a2.5 2.5 0 0 1-2.5 2.5H9V7.5A2.5 2.5 0 0 1 11.5 5z" fill="#006EBC"></path>
+                <path d="M18.5 5H22v11.5a2.5 2.5 0 0 1-2.5 2.5H16V7.5A2.5 2.5 0 0 1 18.5 5z" fill="#F00036"></path>
+                <path d="M25.5 5H29v11.5a2.5 2.5 0 0 1-2.5 2.5H23V7.5A2.5 2.5 0 0 1 25.5 5z" fill="#2AB419"></path>
+                <path d="M10.755 14.5c-1.06 0-2.122-.304-2.656-.987l.78-.676c.068 1.133 3.545 1.24 3.545-.19V9.5h1.802v3.147c0 .728-.574 1.322-1.573 1.632-.466.144-1.365.221-1.898.221zm8.116 0c-.674 0-1.388-.107-1.965-.366-.948-.425-1.312-1.206-1.3-2.199.012-1.014.436-1.782 1.468-2.165 1.319-.49 3.343-.261 3.926.27v.972c-.572-.521-1.958-.898-2.919-.46-.494.226-.737.917-.744 1.448-.006.56.245 1.252.744 1.497.953.467 2.39.04 2.919-.441v1.01c-.358.255-1.253.434-2.129.434zm8.679-2.587c.37-.235.582-.567.582-1.005 0-.438-.116-.687-.348-.939-.206-.207-.58-.469-1.238-.469H23v5h3.546c.696 0 1.097-.230 1.315-.415.283-.250.426-.530.426-.960 0-.431-.155-.908-.737-1.212zm-1.906-.281h-1.428v-1.444h1.495c.956 0 .944 1.444-.067 1.444zm.288 2.157h-1.716v-1.513h1.716c.986 0 1.083 1.513 0 1.513z" fill="#FFF" fill-rule="nonzero"></path>
+              </g>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-master">
+              <title id="pi-master">Mastercard</title>
+              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+              <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+              <circle fill="#EB001B" cx="15" cy="12" r="7"></circle>
+              <circle fill="#F79E1B" cx="23" cy="12" r="7"></circle>
+              <path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" aria-labelledby="pi-shopify_pay">
+              <title id="pi-shopify_pay">Shop Pay</title>
+              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"></path>
+              <path d="M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z" fill="#5A31F4"></path>
+              <path d="M9.35 11.368c-1.017-.223-1.47-.310-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.030l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.510-1.286-1.520 0-2.464.755-2.464 1.956 0 1.275 1.150 1.597 2.170 1.820 1.020.222 1.474.310 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.340-.830a.080.080 0 00-.107-.035l-1.143.570a.083.083 0 00-.036.111c.454.920 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.980s-1.155-1.598-2.173-1.820v-.003zM15.49 8.855c-.650 0-1.224.232-1.636.646a.040.040 0 01-.069-.030v-2.640a.080.080 0 00-.080-.081H12.27a.080.080 0 00-.080.082v8.194a.080.080 0 00.080.082h1.433a.080.080 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.710 0 1.226.521 1.226 1.227v3.594a.080.080 0 00.081.082h1.433a.080.080 0 00.081-.082v-3.594c0-1.510-.981-2.577-2.355-2.577zM20.753 8.620c-.778 0-1.507.240-2.030.588a.082.082 0 00-.027.109l.632 1.088a.080.080 0 00.110.030 2.500 2.500 0 011.318-.366c1.250 0 2.170.891 2.170 2.068 0 1.003-.736 1.745-1.669 1.745-.760 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.080.080 0 00.032-.113l-.596-1.018a.080.080 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.460 1.152 2.550 2.760 2.550 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.570-3.492-3.730-3.492zM28.675 8.843c-.724 0-1.373.270-1.845.746-.026.027-.069.007-.069-.029v-.572a.080.080 0 00-.080-.082h-1.397a.080.080 0 00-.080.082v8.182a.080.080 0 00.080.081h1.433a.080.080 0 00.081-.081v-2.683c0-.036.043-.054.069-.030a2.600 2.600 0 001.808.700c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.680.755 1.680 1.783 0 1.027-.713 1.783-1.681 1.783h.001z" fill="#fff"></path>
+            </svg>
+          </li>
+          <li class="section-footer__payment__payment-types__single">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-visa">
+              <title id="pi-visa">Visa</title>
+              <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+              <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+              <path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"></path>
+            </svg>
+          </li>
+        </ul>
+
+        <div class="footer-bottom">
+          <p>© 2025 Beauty & the Broth</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-logo">
+      <img src="https://thebeautyandthebroth.com/cdn/shop/files/B_TB_Secondary_Logo_-_Gold.png?v=1707232054&width=1920" alt="footer logo">
+    </div>
+  </footer>
+
+
+  
+  <script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.featured-blog__articles');
+            const prevButton = document.querySelector('.overflow-slider__arrow.prev');
+            const nextButton = document.querySelector('.overflow-slider__arrow.next');
+            const articles = document.querySelectorAll('.featured-blog__articles__article-container');
+            
+            // Calculate scroll amount (width of one article + gap)
+            const scrollAmount = articles[0].offsetWidth + 20;
+            
+            // Next button functionality
+            nextButton.addEventListener('click', function() {
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Previous button functionality
+            prevButton.addEventListener('click', function() {
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Show/hide arrows based on scroll position
+            function toggleArrows() {
+                if (slider.scrollLeft <= 10) {
+                    prevButton.classList.add('disabled');
+                } else {
+                    prevButton.classList.remove('disabled');
+                }
+                
+                if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 10) {
+                    nextButton.classList.add('disabled');
+                } else {
+                    nextButton.classList.remove('disabled');
+                }
+            }
+            
+            // Initial check
+            toggleArrows();
+            
+            // Listen for scroll events
+            slider.addEventListener('scroll', toggleArrows);
+        });
+
+
+      // Wait for DOM to be fully loaded
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the textPath element by its ID
+  const textPath = document.getElementById('waveText');
+  
+  if (textPath) {
+    // Add scroll event listener
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+      // Adjust the offset based on scroll position
+      let offset = -96.6 + (scrollY * 0.3);
+      // Apply the offset to the textPath
+      textPath.setAttribute('startOffset', offset);
+    });
+  }
+});
+
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle icon between hamburger and close
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel functionality
+            const cardsContainer = document.querySelector('.featured-collection__cards');
+            const cards = document.querySelectorAll('.featured-collection__cards__card');
+            const prevButton = document.querySelector('.flickity-button.previous');
+            const nextButton = document.querySelector('.flickity-button.next');
+            const dots = document.querySelectorAll('.flickity-page-dots .dot');
+            
+            if (!cardsContainer || cards.length === 0) return;
+            
+            let currentIndex = 0;
+            const cardWidth = cards[0].offsetWidth + 20; // width + margin
+            const cardsPerView = Math.floor(cardsContainer.offsetWidth / cardWidth);
+            const totalSlides = Math.ceil(cards.length / cardsPerView);
+            
+            // Update dots based on total slides
+            function updateDots() {
+                dots.forEach((dot, index) => {
+                    if (index < totalSlides) {
+                        dot.style.display = 'block';
+                        dot.classList.toggle('is-selected', index === currentIndex);
+                    } else {
+                        dot.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Navigate to specific slide
+            function goToSlide(index) {
+                if (index < 0) index = 0;
+                if (index >= totalSlides) index = totalSlides - 1;
+                
+                currentIndex = index;
+                cardsContainer.scrollTo({
+                    left: index * cardsPerView * cardWidth,
+                    behavior: 'smooth'
+                });
+                
+                updateDots();
+            }
+            
+            // Event listeners for navigation
+            if (prevButton) {
+                prevButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+            }
+            
+            if (nextButton) {
+                nextButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+            }
+            
+            // Event listeners for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Initialize dots
+            updateDots();
+            
+            // Handle responsive behavior
+            function handleResize() {
+                const newCardsPerView = Math.floor(cardsContainer.offsetWidth / cardWidth);
+                if (newCardsPerView !== cardsPerView) {
+                    // Reset to first slide on resize
+                    goToSlide(0);
+                }
+            }
+            
+            window.addEventListener('resize', handleResize);
+        });
+
+
+         document.addEventListener('DOMContentLoaded', function() {
+            // Check if user has reduced motion preference
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (reducedMotion) {
+                // Stop the animation for users who prefer reduced motion
+                const marquee = document.querySelector('.content-marquee__content');
+                if (marquee) {
+                    marquee.style.animation = 'none';
+                    
+                    // Add a container with overflow for scrolling instead
+                    const container = document.querySelector('.content-marquee__inner');
+                    if (container) {
+                        container.style.overflowX = 'auto';
+                        container.style.WebkitOverflowScrolling = 'touch';
+                    }
+                }
+            }
+            
+            // Handle hover state for better accessibility
+            const marqueeItems = document.querySelectorAll('.content-marquee__item');
+            marqueeItems.forEach(item => {
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('aria-label', 'Press featured in ' + (item.querySelector('img') ? item.querySelector('img').alt : 'As seen in'));
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const tabLinks = document.querySelectorAll('.LT-product-checkbox_tab-link');
+        const tabs = document.querySelectorAll('.LT-product-checkbox_tab');
+        
+        // Remove active class from all links initially
+        tabLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Remove active class from all links
+                tabLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Hide all tabs
+                tabs.forEach(tab => tab.classList.remove('active'));
+                
+                // Show the corresponding tab
+                const tabId = this.getAttribute('for');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    });
+  
+
+       
+        // Duplicate the items for seamless looping
+        document.addEventListener('DOMContentLoaded', function() {
+            const marquee = document.querySelector('.testimonial-track');
+            const items = marquee.innerHTML;
+            marquee.innerHTML = items + items + items;
+        });
+
+
+          document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.featured-blog__articles');
+            const prevButton = document.querySelector('.nav-arrow.prev');
+            const nextButton = document.querySelector('.nav-arrow.next');
+            const articles = document.querySelectorAll('.featured-blog__articles__article-container');
+            
+            // Calculate scroll amount (width of one article + gap)
+            const scrollAmount = articles[0].offsetWidth + 20;
+            
+            // Next button functionality
+            nextButton.addEventListener('click', function() {
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Previous button functionality
+            prevButton.addEventListener('click', function() {
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Show/hide arrows based on scroll position
+            function toggleArrows() {
+                if (slider.scrollLeft <= 10) {
+                    prevButton.style.opacity = '0.5';
+                    prevButton.style.cursor = 'default';
+                } else {
+                    prevButton.style.opacity = '1';
+                    prevButton.style.cursor = 'pointer';
+                }
+                
+                if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 10) {
+                    nextButton.style.opacity = '0.5';
+                    nextButton.style.cursor = 'default';
+                } else {
+                    nextButton.style.opacity = '1';
+                    nextButton.style.cursor = 'pointer';
+                }
+            }
+            
+            // Initial check
+            toggleArrows();
+            
+            // Listen for scroll events
+            slider.addEventListener('scroll', toggleArrows);
+        });
+    
+    </script>
+</body>
+</html>
+
 
