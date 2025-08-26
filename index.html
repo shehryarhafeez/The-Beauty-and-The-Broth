@@ -401,10 +401,10 @@ html, body {
 
 
 .luna-templates__button {
-  padding: 0.6rem 2rem;
+
   margin: 20px 0;
   background-color: #ab002d;
-  border: 1px solid #ab002d;
+  border:  1px solid #ab002d;
   color: #ffffff !important;
   font-size: 16px;
   text-decoration: none;
@@ -421,7 +421,7 @@ html, body {
 
 
 .luna-templates__button2 {
-  padding: 0.5rem 2rem;
+ 
   margin: 20px 0;
   background-color: #ab002d;
   border: 1px solid #ab002d;
@@ -442,7 +442,7 @@ html, body {
 
 
 .luna-templates__button3 {
-  padding: 0.6rem 2rem;
+
   margin: 120px 0;
   background-color: #ab002d;
   border: 1px solid #ab002d;
@@ -1192,8 +1192,10 @@ html, body {
         }
         
         .__article-txt-p-sm {
+            padding-top: 7px;
             font-size: 14px;
             letter-spacing: 0.5px;
+            font-weight: 100px;
         }
         
         .quote-card__quote p {
@@ -1715,27 +1717,26 @@ html, body {
         .article-card__btn:hover::after {
             height: 2px;
         }
-        
-        .featured-blog__btn {
-            display: block;
-            width: fit-content;
-            margin: 30px auto 0;
-            padding: 12px 24px;
-            background-color: RGB(171,0,45);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 15px;
-            transition: background-color 0.2s ease;
-            text-align: center;
-        }
-        
-        .featured-blog__btn:hover {
-             background-color: #f7f4eb;
-            border: 1px solid #ab002d;
-            color: #ab002d;
-        }
+ .featured-blog__btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 12px 24px;
+    background-color: rgb(171,0,45);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    border: 1px solid transparent; /* ✅ Always reserve space */
+}
+
+.featured-blog__btn:hover {
+    background-color: #f7f4eb;
+    border-color: #ab002d; /* ✅ Only change color */
+    color: #ab002d;
+}
         
         @media (max-width: 900px) {
             .featured-blog__articles__article-container {
@@ -3024,18 +3025,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         //rotate
-  document.addEventListener("DOMContentLoaded", () => {
-  const sticker = document.querySelector(".spinning-sticker");
-  let angle = 0;
 
-  function rotate() {
-    angle -= 0.2; // minus = anti-clockwise
-  sticker.style.transform = `rotate(${angle}deg)`
-    requestAnimationFrame(rotate);
-  }
-
-  rotate();
-});
         
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
