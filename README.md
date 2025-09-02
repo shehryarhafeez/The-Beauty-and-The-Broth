@@ -1,7 +1,7 @@
-# 🎉 Quiz App
+# 🎉 The-Beauty-and-The-Broth(Replica)
 
 A single-page HTML website for "Beauty & The Broth", featuring product showcases, testimonials, and an e-commerce interface for organic bone broth products.
-The design is responsive, modern, and interactive.
+The design is responsive, modern, and interactive. Original Website (https://thebeautyandthebroth.com/)
 
 ---
 
